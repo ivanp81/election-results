@@ -52,11 +52,8 @@ To login into the console leave all the predefined values and use the following 
 ```jdbc:h2:mem:testdb```
 
 ##### NOTE
-Not sure where to save the total number of seats to assign I created 
-an ```Election``` Object where to save some information. The table is created and populated
-automatically during application start up. 
-        
-During startup a ```schema.sql``` and ```data.sql``` script are executed. Both can be found under ```resource``` folder.
+       
+During startup a ```schema.sql``` and ```data.sql``` script are executed. Tables are created and populated automatically. Both can be found under ```resource``` folder.
   
 As an in memory database, every application restart will cause the loose of the previously saved data.
 
@@ -100,7 +97,7 @@ To stop the polling use the endpoint:
 
 http://localhost:8080/ingestion/stopPoll
 
-##Build and run the application
+## Build and run the application
 
 ### From IDE
 You can simply import the project as a Maven project and run the main class 

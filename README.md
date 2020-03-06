@@ -17,7 +17,7 @@ Successfully processed file are marked as PROCESSED. Failed processed file are m
 The user interface make use of STOMP to connect to a configured WebSocket endpoint and 
 subscribes to the pubsub topic where the live scores are pushed.
 
-Once new live scores reach the topic these will be shown on the application main page
+Once new live scores reach the topic these will be shown on the application main page.
 
 ## Election Score Board
 The Election Score Board carry on the top scores for the ongoing election.

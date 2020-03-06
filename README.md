@@ -25,7 +25,7 @@ The Election Score Board carry on the top scores for the ongoing election.
 Top Scores show the top party scores. The number of seats won and the current share of votes.
 A special score is added to the list to aggregate score for the other parties.
 
-Once a party reach the majority it will be highlighted in green in the UI                   
+Once a party reach the majority it will be highlighted in green in the UI.                   
     
 ## Technology stack
 - jdk 1.8

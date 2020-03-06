@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Live Election Results</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="js/ng-stomp.standalone.min.js"></script>
+    <script type="text/javascript">
+
+  var app = angular.module('liveElectionScore', ['ngStomp']);
+
+  app.controller('LiveController', function ($stomp, $scope) {
+
+      $scope.board;
+
+      $stomp.connect('http://localhost:8080/live-election-score-websocket', {})
+            .then(function (frame) {
+                var subscription = $stomp.subscribe('/topic/live-election-score',
+                    function (payload, headers, res) {
+                        $scope.board = payload;
+                        $scope.$apply($scope.board);
+                });
+
+                $stomp.send('/app/live-election-score', '');
+         });
+  });
+
+ </script>
+    <style>
+.green {
+    color: green;
+}
+.grey {
+    color: grey;
+}
+</style>
+</head>
+<body >
+<div ng-app="liveElectionScore" ng-controller="LiveController">
+    <p>Live Election Results</p>
+
+    <div ng-repeat="score in board.topScores">
+        <span ng-class="{grey: score.majority == false, green: score.majority == true}">{{$index+1}} - {{score.party}} - <b>{{score.seats}}</b> <b>{{score.votes}}</b> <b>{{score.share}}%</b></span>
+    </div>
+
+</div>
+</body>
+</html>

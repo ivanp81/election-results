@@ -1,5 +1,5 @@
 # Election Results
-Election Result is a Spring Boot (near) real time application meant to show election results from an UK general election. 
+Election Result is a Spring Boot (near) real-time application meant to show election results from an UK general election. 
 Results are provided as XML files that are ingested and processed. An application user interface shows in real time the ongoing election.
 
 ## File Ingestion
